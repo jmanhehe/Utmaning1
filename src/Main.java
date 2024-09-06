@@ -10,11 +10,15 @@ public class Main {
         // Currently runs on args, so make sure to configure args before running.
         // If you want to manually input the SSN un-comment the lines 15, 16, 17
         // and comment line 13
-        String ssn = args[0];
+        String ssn;
 
-        // Scanner scanner = new Scanner(System.in); // Create my scanner
-        // System.out.printf("Enter SSN, YYYYMMDD-XXXX: ");
-        // String ssn = scanner.nextLine();
+        if(args.length >= 1){
+            ssn = args[0];
+        } else {
+            Scanner scanner = new Scanner(System.in); // Create my scanner
+            System.out.printf("Enter SSN, YYYYMMDD-XXXX: ");
+            ssn = scanner.nextLine();
+        }
 
         if(!ssn.contains("-") || ssn.length() != 13) {
             System.out.println("Wrong format");
